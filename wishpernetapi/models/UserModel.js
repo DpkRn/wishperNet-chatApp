@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {genSalt,hash} from 'bcrypt'
+import bcryptjs from 'bcryptjs'
 
 
 const userSchema=new mongoose.Schema({
@@ -36,8 +36,8 @@ const userSchema=new mongoose.Schema({
 },{timestamps:true})
 
 userSchema.pre('save',async function (next){
-   const salt=await genSalt()
-   this.password=await hash(this.password,salt)
+   
+   this.password=await bcryptjs.hash(this.password,10)
    next()
 })
 

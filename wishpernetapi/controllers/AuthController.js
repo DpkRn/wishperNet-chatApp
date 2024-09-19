@@ -1,6 +1,6 @@
 import User from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
-import { compare } from "bcryptjs";
+import bcryptjs from "bcryptjs";
 import path from 'path'
 import fs from 'fs'
 const maxAge = 3 * 24 * 60 * 60 * 1000;
@@ -43,7 +43,7 @@ export const login = async (req, res, next) => {
     if (!user) {
       return res.status(404).send("user not found!");
     }
-    const auth = await compare(password, user.password);
+    const auth = await bcryptjs.compare(password, user.password);
     if (!auth) {
       return res.status(401).send("Invalid password !");
     }

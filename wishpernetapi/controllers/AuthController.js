@@ -1,6 +1,6 @@
 import User from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
-import { compare } from "bcrypt";
+import { compare } from "bcryptjs";
 import path from 'path'
 import fs from 'fs'
 const maxAge = 3 * 24 * 60 * 60 * 1000;

@@ -2,7 +2,7 @@
 
 # dependencies
 /wishpernet/node_modules
- node_modules
+node_modules/
 /wishpernet/.env
 /wishpernetapi/.env
 /.pnp

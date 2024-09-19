@@ -4,7 +4,9 @@
   "main": "index.js",
   "author":"d.wizard.techno",
   "scripts": {
-    "start": "nodemon index.js ejs"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "build": "npm install"
   },
   "type": "module",
   "keywords": [],

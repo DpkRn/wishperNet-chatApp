@@ -7,8 +7,6 @@ import AuthRoute from './routes/AuthRoutes.js'
 import ContactsRoute from './routes/ContactRoutes.js'
 import setupSocket from './socket.js'
 import MessageRoute from './routes/MessageRoute.js'
-import path from 'path';
-
 dotenv.config()
 
 const app=express()
@@ -21,17 +19,6 @@ app.use(cors({
     methods:['GET','POST','PUT','PATCH','DELETE'],
     credentials:true
 }));
-
-
-const frontendPath=path.join(path.resolve(), 'wishpernet','dist')
-
-app.use(express.static(frontendPath));
-
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(path.resolve(), frontendPath, 'index.html'));
-});
-
 
 app.use('/uploads/profiles',express.static('uploads/profiles'))
 app.use(cookieParser())

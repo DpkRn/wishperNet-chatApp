@@ -2,15 +2,12 @@
 
 # dependencies
 /wishpernet/node_modules
-/wishpernet/dist
-/node_modules
+/wishpernetapi/node_modules
 /wishpernet/.env
-/.env
+/wishpernetapi/.env
 /.pnp
 .pnp.js
 .env
-
-node_modules
 # testing
 /coverage
 

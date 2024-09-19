@@ -4,12 +4,11 @@
   "main": "index.js",
   "author":"d.wizard.techno",
   "scripts": {
-    "dev":"nodemon wishpernetapi/index.js",
-    "start": "node wishpernetapi/index.js",
-    "build": "npm install && npm install --prefix whispernet && npm run build --prefix wishpernet"
+    "start": "nodemon index.js ejs"
   },
   "type": "module",
   "keywords": [],
+  "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {

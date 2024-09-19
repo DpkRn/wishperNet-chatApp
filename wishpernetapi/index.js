@@ -7,18 +7,28 @@ import AuthRoute from './routes/AuthRoutes.js'
 import ContactsRoute from './routes/ContactRoutes.js'
 import setupSocket from './socket.js'
 import MessageRoute from './routes/MessageRoute.js'
+import path from 'path'
 dotenv.config()
-
 const app=express()
 const port=process.env.PORT || 8747
 const database_Url=process.env.DATABASE_URL
 
 
+
+
 app.use(cors({
-    origin:process.env.ORIGIN || 'https://wishper-net-chat-app.vercel.app',
+    origin:process.env.ORIGIN,
     methods:['GET','POST','PUT','PATCH','DELETE'],
     credentials:true
 }));
+
+
+
+app.use(express.static(path.join(path.resolve(), 'wishpernet','dist')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(path.resolve(), 'dist', 'index.html'));
+});
 
 app.use('/uploads/profiles',express.static('uploads/profiles'))
 app.use(cookieParser())

@@ -8,19 +8,20 @@ function ContactsContainer() {
       <div className="pt-3">
         <Logo />
       </div>
+
       <div className="my-5">
         <div className="flex items-center justify-between pr-10">
           <Title text="Direct Message" />
         <NewDm/>
         </div>
       </div>
+
       <div className="my-5">
         <div className="flex items-center justify-between pr-10">
           <Title text="Channels" />
         </div>
       </div>
-
-
+      
       <ProfileInfo/>
     </div>
   );

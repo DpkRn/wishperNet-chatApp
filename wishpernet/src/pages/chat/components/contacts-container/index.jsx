@@ -4,7 +4,7 @@ import NewDm from "./components/new-dm";
 
 function ContactsContainer() {
   return (
-    <div className="relative h-[100%] md:w-[35vw] lg:w-[30vw] xl:w-[20vw] bg-[#1b1c24] border-r-2 border-[#2f303b] w-full">
+    <div className="relative h-[100vh] md:w-[35vw] lg:w-[30vw] xl:w-[20vw] bg-[#1b1c24] border-r-2 border-[#2f303b] w-full">
       <div className="pt-3">
         <Logo />
       </div>

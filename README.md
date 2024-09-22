@@ -45,7 +45,7 @@ npm run dev</code></pre>
 </ol>
 
 <h2>Live Demo</h2>
-<p>The Chat App is live and can be accessed at <a href="https://wisherapp.onrender.com">WisherApp</a>.</p>
+<p>The Chat App is live and can be accessed at <a href="https://wishpernet.onrender.com/">WisherApp</a>.</p>
 
 <h2>Future Enhancements</h2>
 <ul>

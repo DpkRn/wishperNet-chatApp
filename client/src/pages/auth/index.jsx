@@ -74,16 +74,18 @@ function Auth() {
           } else {
             navigate("/chat");
           }
-        }else if(response.status===401){
-          toast.error("invalid credential !")
-        }else if(response.status===404){
-          toast.error('user does not exist')
-        }
+        } 
       }
     } catch (err) {
       setLoading(false)
-      toast.error("something went wrong !")
-      
+      if(err.response.status===401){
+        toast.error("invalid credential !")
+      }else if(err.response.status===404){
+        toast.error('user does not exist')
+      } else{
+        toast.error('user does not exist')
+
+      }
     }
   };
 
@@ -102,12 +104,13 @@ function Auth() {
           if (response.data.user.profileSetup === false) {
             navigate("/profile");
           }
-        }else if(response.status===409){
-          toast.error("user already exists")
         }
       }
     } catch (err) {
       setLoading(false)
+      if(response.status===409){
+        toast.error("user already exists")
+      }else
       toast.error("something went wrong !")
      
     }

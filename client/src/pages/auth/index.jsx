@@ -74,8 +74,10 @@ function Auth() {
           } else {
             navigate("/chat");
           }
-        }else{
+        }else if(response.status===401){
           toast.error("invalid credential !")
+        }else if(response.status===404){
+          toast.error('user does not exist')
         }
       }
     } catch (err) {
@@ -100,7 +102,7 @@ function Auth() {
           if (response.data.user.profileSetup === false) {
             navigate("/profile");
           }
-        }else{
+        }else if(response.status===409){
           toast.error("user already exists")
         }
       }
